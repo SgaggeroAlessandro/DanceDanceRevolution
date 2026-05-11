@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 
@@ -21,50 +20,89 @@ namespace DanceDanceRevolution
         bool statogiu = false;
         bool statosinistra = false;
         bool statocentro = false;
+        List<int> passi = new List<int>();
+
         public Form1()
         {
             InitializeComponent();
-            
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             player.SoundLocation = "pumpupthemind-dance-revolution-243729.wav";
             player.PlayLooping();
             label2.Text = "Punteggio: " + punteggio;
-            await Task.Delay(3000);
-            generaNumero();
+
+            for (int i = 0; i < 2; i++)
+            {
+                passi.Add(rnd.Next(1, 6));
+            }
+
+            nuoviPassi();
+            prossimoPasso();
         }
-        private  void generaNumero()
+
+        private void nuoviPassi()
+        {
+            string preview = "Prossimi passi: ";
+            for (int i = 0; i < passi.Count; i++)
+            {
+                if (passi[i] == 1)
+                {
+                    preview += "SU ";
+                }
+                else if (passi[i] == 2)
+                {
+                    preview += "DESTRA ";
+                }
+                else if (passi[i] == 3)
+                {
+                    preview += "GIU ";
+                }
+                else if (passi[i] == 4)
+                {
+                    preview += "SINISTRA ";
+                }
+                else if (passi[i] == 5)
+                {
+                    preview += "CENTRO ";
+                }
+            }
+            label3.Text = preview;
+        }
+
+        private void prossimoPasso()
         {
             int n = rnd.Next(1, 6);
-           
-            if (n == 1)
-            {   
-               
+            passi.Add(n);
+
+            int passoCorrente = passi[0];
+            passi.RemoveAt(0);
+
+            nuoviPassi();
+
+            if (passoCorrente == 1)
+            {
                 FrecciaSu();
             }
-            else if (n == 2)
+            else if (passoCorrente == 2)
             {
-                
                 FrecciaDestra();
             }
-            else if (n == 3)
+            else if (passoCorrente == 3)
             {
-               
                 FrecciaGiu();
             }
-            else if (n == 4)
+            else if (passoCorrente == 4)
             {
-               
                 FrecciaSinistra();
             }
-            else if(n == 5)
+            else if (passoCorrente == 5)
             {
-               
                 Centro();
             }
         }
+
         private void FrecciaSu()
         {
             btnSu.BackColor = Color.Green;
@@ -76,16 +114,19 @@ namespace DanceDanceRevolution
             btnDestra.BackColor = Color.Yellow;
             statodestra = true;
         }
+
         private void FrecciaGiu()
         {
             btnGiu.BackColor = Color.Blue;
             statogiu = true;
         }
+
         private void FrecciaSinistra()
         {
             btnSinistra.BackColor = Color.Fuchsia;
             statosinistra = true;
         }
+
         private void Centro()
         {
             btnCentro.BackColor = Color.Gold;
@@ -100,7 +141,7 @@ namespace DanceDanceRevolution
                 label2.Text = "Punteggio: " + punteggio;
                 btnSu.BackColor = Color.White;
                 statosu = false;
-                generaNumero();
+                prossimoPasso();
             }
             else
             {
@@ -125,7 +166,7 @@ namespace DanceDanceRevolution
                 label2.Text = "Punteggio: " + punteggio;
                 btnDestra.BackColor = Color.White;
                 statodestra = false;
-                generaNumero();
+                prossimoPasso();
             }
             else
             {
@@ -150,7 +191,7 @@ namespace DanceDanceRevolution
                 label2.Text = "Punteggio: " + punteggio;
                 btnGiu.BackColor = Color.White;
                 statogiu = false;
-                generaNumero();
+                prossimoPasso();
             }
             else
             {
@@ -175,7 +216,7 @@ namespace DanceDanceRevolution
                 label2.Text = "Punteggio: " + punteggio;
                 btnSinistra.BackColor = Color.White;
                 statosinistra = false;
-                generaNumero();
+                prossimoPasso();
             }
             else
             {
@@ -200,12 +241,12 @@ namespace DanceDanceRevolution
                 label2.Text = "Punteggio: " + punteggio;
                 btnCentro.BackColor = Color.White;
                 statocentro = false;
-                generaNumero();
+                prossimoPasso();
             }
             else
             {
                 if (punteggio > 0)
-                { 
+                {
                     punteggio--;
                     label2.Text = "Punteggio: " + punteggio;
                 }
@@ -216,7 +257,5 @@ namespace DanceDanceRevolution
                 }
             }
         }
-
-        
     }
 }

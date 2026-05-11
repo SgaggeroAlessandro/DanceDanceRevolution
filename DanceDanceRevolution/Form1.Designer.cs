@@ -35,6 +35,7 @@
             this.btnSinistra = new System.Windows.Forms.Button();
             this.btnCentro = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +55,7 @@
             this.btnSu.BackColor = System.Drawing.Color.White;
             this.btnSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSu.Location = new System.Drawing.Point(270, 58);
-            this.btnSu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSu.Margin = new System.Windows.Forms.Padding(2);
             this.btnSu.Name = "btnSu";
             this.btnSu.Size = new System.Drawing.Size(72, 58);
             this.btnSu.TabIndex = 1;
@@ -67,7 +68,7 @@
             this.btnDestra.BackColor = System.Drawing.Color.White;
             this.btnDestra.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDestra.Location = new System.Drawing.Point(400, 154);
-            this.btnDestra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDestra.Margin = new System.Windows.Forms.Padding(2);
             this.btnDestra.Name = "btnDestra";
             this.btnDestra.Size = new System.Drawing.Size(72, 58);
             this.btnDestra.TabIndex = 2;
@@ -80,7 +81,7 @@
             this.btnGiu.BackColor = System.Drawing.Color.White;
             this.btnGiu.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiu.Location = new System.Drawing.Point(270, 247);
-            this.btnGiu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGiu.Margin = new System.Windows.Forms.Padding(2);
             this.btnGiu.Name = "btnGiu";
             this.btnGiu.Size = new System.Drawing.Size(72, 58);
             this.btnGiu.TabIndex = 3;
@@ -93,7 +94,7 @@
             this.btnSinistra.BackColor = System.Drawing.Color.White;
             this.btnSinistra.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSinistra.Location = new System.Drawing.Point(120, 154);
-            this.btnSinistra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSinistra.Margin = new System.Windows.Forms.Padding(2);
             this.btnSinistra.Name = "btnSinistra";
             this.btnSinistra.Size = new System.Drawing.Size(72, 58);
             this.btnSinistra.TabIndex = 4;
@@ -106,7 +107,7 @@
             this.btnCentro.BackColor = System.Drawing.Color.White;
             this.btnCentro.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCentro.Location = new System.Drawing.Point(270, 154);
-            this.btnCentro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCentro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCentro.Name = "btnCentro";
             this.btnCentro.Size = new System.Drawing.Size(72, 58);
             this.btnCentro.TabIndex = 5;
@@ -125,12 +126,22 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "PUNTEGGIO:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(451, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCentro);
             this.Controls.Add(this.btnSinistra);
@@ -138,11 +149,10 @@
             this.Controls.Add(this.btnDestra);
             this.Controls.Add(this.btnSu);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +167,7 @@
         private System.Windows.Forms.Button btnSinistra;
         private System.Windows.Forms.Button btnCentro;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
